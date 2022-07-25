@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "fields": "libs/fields",
+    "shared-ui": "libs/shared-ui",
+    "user-dashboard": "apps/user-dashboard",
+    "user-dashboard-e2e": "apps/user-dashboard-e2e"
+  }
+}
