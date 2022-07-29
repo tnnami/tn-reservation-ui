@@ -22,6 +22,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import {AccordionModule} from 'primeng/accordion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import { CardComponent } from './shared/card/card.component';
 
 
 
@@ -60,6 +61,7 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    CardComponent,
 
   ],
   imports: [BrowserModule,
@@ -72,5 +74,8 @@ const routes: Routes = [
     ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [
+    CardComponent
+  ],
 })
 export class AppModule {}
