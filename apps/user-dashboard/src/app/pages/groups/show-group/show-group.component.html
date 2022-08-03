@@ -1,20 +1,30 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Employee List</h2>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-  
-        </tbody>
-      </table>
-    </div>
-  </div>
+<link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
+    <section class="content-section">
+      <div class="section-header-wrapper">
+        <h1 class="section-header">Recent Reservations</h1>
+        <a class="section-header-link">
+          View all files
+        </a>
+      </div>
+      <div class="files-table">
+        <div class="files-table-header">
+          <div class="column-header table-cell">Name</div>
+          <div class="column-header table-cell size-cell">Size</div>
+          <div class="column-header table-cell">Last Modified</div>
+          <div class="column-header table-cell">Status</div>
+        </div>
+
+        <tr *ngFor="let grp of groups | async">
+          <td class="table-cell name-cell pdf">{{grp.id}}</td>
+          <td class="table-cell">{{grp.name}}</td>
+          <td class="table-cell">{{grp.teamMember}}</td>
+          <div class="files-table-row">
+          <td><button (click)="delGroups(grp.id)" class="more-action">Delete</button>
+              <button (click)="groupUpdate(grp.id)" class="more-action"style="margin-left: 10px">Update</button>
+              <button (click)="groupDetails(grp.id)" class="more-action" style="margin-left: 10px">Details</button>
+          </td>
+        </div>
+        </tr>
+        </div>
+    </section>
+

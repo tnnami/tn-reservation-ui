@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "authentication": "apps/authentication",
+    "authentication-e2e": "apps/authentication-e2e",
     "fields": "libs/fields",
     "shared-ui": "libs/shared-ui",
     "user-dashboard": "apps/user-dashboard",

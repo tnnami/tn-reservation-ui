@@ -1,0 +1,98 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/authentication/src",
+  "prefix": "tn-reservation-ui",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/authentication",
+        "index": "apps/authentication/src/index.html",
+        "main": "apps/authentication/src/main.ts",
+        "polyfills": "apps/authentication/src/polyfills.ts",
+        "tsConfig": "apps/authentication/tsconfig.app.json",
+        "assets": [
+          "apps/authentication/src/favicon.ico",
+          "apps/authentication/src/assets"
+        ],
+        "styles": [
+          "apps/authentication/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/authentication/src/environments/environment.ts",
+              "with": "apps/authentication/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "authentication:build:production"
+        },
+        "development": {
+          "browserTarget": "authentication:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "authentication:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/authentication/**/*.ts",
+          "apps/authentication/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/authentication"
+      ],
+      "options": {
+        "jestConfig": "apps/authentication/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

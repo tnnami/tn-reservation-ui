@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/user-dashboard",
         "index": "apps/user-dashboard/src/index.html",
@@ -16,8 +18,10 @@
           "apps/user-dashboard/src/favicon.ico",
           "apps/user-dashboard/src/assets"
         ],
-        "styles": ["apps/user-dashboard/src/styles.css",
-        "node_modules/bootstrap/dist/css/bootstrap.css"],
+        "styles": [
+          "apps/user-dashboard/src/styles.css",
+          "node_modules/bootstrap/dist/css/bootstrap.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -82,7 +86,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/user-dashboard"],
+      "outputs": [
+        "coverage/apps/user-dashboard"
+      ],
       "options": {
         "jestConfig": "apps/user-dashboard/jest.config.ts",
         "passWithNoTests": true

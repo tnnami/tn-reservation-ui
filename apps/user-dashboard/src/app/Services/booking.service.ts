@@ -8,13 +8,13 @@ import { Booking } from "../Models/booking.model";
  @Injectable({providedIn:"root"})
  export class BookingService {
 
-    private baseUrl = 'http://localhost:8080/api/';  
+    private baseUrl = 'http://localhost:8081/reservation';  
  
    constructor(private http:HttpClient) {
    }
  
    public getBooking():Observable<Booking[]>{
-     return this.http.get<Booking[]>(`${this.baseUrl}`+"/Booking");
+     return this.http.get<Booking[]>(`${this.baseUrl}`+"/all");
    }
 
    public getSelectedBooking():Observable<Booking[]>{
@@ -35,6 +35,9 @@ import { Booking } from "../Models/booking.model";
    public save(Book:Booking):Observable<Booking>{
      return this.http.post<Booking>(`${this.baseUrl}`+"/Booking/",Book);
    }
+   create(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, data);
+  }
    public update(Book:Booking):Observable<Booking>{
      return this.http.put<Booking>(`${this.baseUrl}`+"/Booking/"+Book.id,Book);
    }
